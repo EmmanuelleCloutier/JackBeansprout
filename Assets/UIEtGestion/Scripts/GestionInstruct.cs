@@ -20,31 +20,31 @@ public class GestionInstruct : MonoBehaviour
     void Start()
     {
         _cestParti.SetActive(false); //Cache le texte qui dit que la partie va commencer
-        _imageReadyJ1.GetComponent<Image>().color = Color.red; //Met en rouge les images accompagnant les textes "Prêt?" pour indiquer que le joueur n'est pas prêt
+        _imageReadyJ1.GetComponent<Image>().color = Color.red; //Met en rouge les images accompagnant les textes "Prï¿½t?" pour indiquer que le joueur n'est pas prï¿½t
         _imageReadyJ2.GetComponent<Image>().color = Color.red;
-        _txtPretJ1.text = "Pret?"; //Écrit Prêt? avec un ? pour demander si le joueur est prêt
+        _txtPretJ1.text = "Pret?"; //ï¿½crit Prï¿½t? avec un ? pour demander si le joueur est prï¿½t
         _txtPretJ2.text = "Pret?";
-        _gestionScene = FindObjectOfType<GestionScenes>().GetComponent<GestionScenes>(); //Trouver le script GestionScenes pour pouvoir changer de scène lorsque les joueurs seront prêts
+        _gestionScene = FindObjectOfType<GestionScenes>().GetComponent<GestionScenes>(); //Trouver le script GestionScenes pour pouvoir changer de scï¿½ne lorsque les joueurs seront prï¿½ts
     }
 
     // Update is called once per frame
     void Update()
     {
         //Si le joueur 1 appuit sur son bouton
-         if (Input.GetKeyDown("Horizontal_P1") || Input.GetKeyDown("Vertical_P1") || Input.GetKeyDown("space"))
+         if (Input.GetKeyDown("space"))
          {
-             joueur1Pret = true; //le joueur 1 est prêt
-             _imageReadyJ1.GetComponent<Image>().color = Color.green; //Met en vert l'images accompagnant le texte "Prêt" pour indiquer que le joueur 1 est prêt
-            _txtPretJ1.text = "Pret!"; //Écrit Prêt! avec un ! pour indiquer que le joueur 1 est prêt
+             joueur1Pret = true; //le joueur 1 est prï¿½t
+             _imageReadyJ1.GetComponent<Image>().color = Color.green; //Met en vert l'images accompagnant le texte "Prï¿½t" pour indiquer que le joueur 1 est prï¿½t
+            _txtPretJ1.text = "Pret!"; //ï¿½crit Prï¿½t! avec un ! pour indiquer que le joueur 1 est prï¿½t
         }
         //Si le joueur 2 appuit sur son bouton
-        if (Input.GetKeyDown("Horizontal_P2") || Input.GetKeyDown("Vertical_P2") || Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("escape"))
          {
-             joueur2Pret = true; //le joueur 2 est prêt
-            _imageReadyJ2.GetComponent<Image>().color = Color.green;  //Met en vert l'images accompagnant le texte "Prêt" pour indiquer que le joueur 2 est prêt
-            _txtPretJ2.text = "Pret!"; //Écrit Prêt! avec un ! pour indiquer que le joueur 2 est prêt
+             joueur2Pret = true; //le joueur 2 est prï¿½t
+            _imageReadyJ2.GetComponent<Image>().color = Color.green;  //Met en vert l'images accompagnant le texte "Prï¿½t" pour indiquer que le joueur 2 est prï¿½t
+            _txtPretJ2.text = "Pret!"; //ï¿½crit Prï¿½t! avec un ! pour indiquer que le joueur 2 est prï¿½t
         }
-        //Si les deux joueurs sont prêts
+        //Si les deux joueurs sont prï¿½ts
          if(joueur1Pret && joueur2Pret)
          {
             StartCoroutine(cestParti());
@@ -53,15 +53,15 @@ public class GestionInstruct : MonoBehaviour
     }
 
     /*
-     * Rôle : Créer la séquence de transition entre les instructions et le commencement du niveau
-     * Entrée : Aucune
+     * Rï¿½le : Crï¿½er la sï¿½quence de transition entre les instructions et le commencement du niveau
+     * Entrï¿½e : Aucune
      */
     IEnumerator cestParti()
     {
         yield return new WaitForSeconds(0.5f);
         _cestParti.SetActive(true); //Affiche du texte pour indiquer que la partie va commencer
         yield return new WaitForSeconds(2f); 
-        StartCoroutine(_gestionScene.ChangerScene()); //Passer à la scène du niveau
+        StartCoroutine(_gestionScene.ChangerScene()); //Passer ï¿½ la scï¿½ne du niveau
        
     }
 }
