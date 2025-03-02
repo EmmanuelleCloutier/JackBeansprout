@@ -6,18 +6,16 @@ using System.Xml;
 using Unity.Burst.CompilerServices;
 using Unity.Mathematics;
 using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.TextCore.Text;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using Random = UnityEngine.Random;
 
-
-
-
-
+#if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.TextCore.Text;
+using UnityEditor.UIElements;
+#endif
 
 public class CréationLabyrinte : MonoBehaviour
 {
