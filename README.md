@@ -37,4 +37,5 @@ At the end of the game, **the player with the most points** is declared the **wi
 
 - Daphnée 
 - Félix 
-- Thomas 
+- Thomas
+
