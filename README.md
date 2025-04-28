@@ -35,6 +35,6 @@ At the end of the game, **the player with the most points** is declared the **wi
 
 ##  Team Members
 
-- Daphnée Blais
+- Daphnée 
 - Félix 
-- Thomas Hamelin
+- Thomas 
